@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Стероиды для продаж | Маркетинг-интенсив</title>
+    <!-- Google Fonts + Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #010101;
+            color: #eef2ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* агрессивные акценты */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(95deg, #ff3131, #ff6a00);
+            color: white;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 14px 36px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: 0.25s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 18px rgba(255, 49, 49, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            background: linear-gradient(95deg, #ff1f1f, #ff5500);
+            box-shadow: 0 0 28px rgba(255, 68, 0, 0.7);
+        }
+
+        /* хедер с глэссом */
+        .header {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 50, 50, 0.3);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ff4d4d, #ffa200);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: none;
+            color: #fff;
+            -webkit-background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #ddd;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ff5e3a;
+            text-shadow: 0 0 5px #ff3c00;
+        }
+
+        /* hero — стероидный стиль */
+        .hero {
+            padding: 90px 0 70px;
+            background: radial-gradient(circle at 10% 20%, #0d0f1a, #020205);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "💉⚡";
+            font-size: 360px;
+            opacity: 0.03;
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 54px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: #ff313130;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #ff7b4a;
+            border: 1px solid #ff5e3a60;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF, #ffbc6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #b9c3dd;
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ff5e3a;
+        }
+
+        .hero-image {
+            flex: 0.9;
+            background: rgba(15, 15, 25, 0.7);
+            border-radius: 48px;
+            padding: 25px 20px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            border: 1px solid #ff5e3a40;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .hero-image i {
+            font-size: 8rem;
+            color: #ff5e3a;
+            filter: drop-shadow(0 0 12px #ff3c00);
+        }
+
+        /* карточки стероидов */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 56px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-title span {
+            color: #ff5e3a;
+            border-bottom: 3px solid #ff5e3a;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #0b0e17;
+            border-radius: 32px;
+            padding: 32px 28px;
+            flex: 1 1 270px;
+            text-align: center;
+            transition: 0.25s;
+            border: 1px solid #2a2e3f;
+            backdrop-filter: blur(4px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ff5e3a;
+            box-shadow: 0 20px 35px -10px #ff3c0040;
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #ff5e3a;
+            margin-bottom: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        /* программа — как стероидный цикл */
+        .program {
+            background: #03050b;
+            border-top: 1px solid #ff3c0022;
+            border-bottom: 1px solid #ff3c0022;
+        }
+
+        .program-list {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .program-item {
+            background: #0e111c;
+            border-radius: 28px;
+            margin-bottom: 20px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            border-left: 6px solid #ff5e3a;
+        }
+
+        .day-badge {
+            background: #ff5e3a20;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 8px 20px;
+            border-radius: 60px;
+            color: #ff8c5a;
+            font-family: monospace;
+        }
+
+        .program-text {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        /* форма с мускулистым вайбом */
+        .form-section {
+            background: linear-gradient(145deg, #070a12, #000000);
+        }
+
+        .form-wrapper {
+            display: flex;
+            gap: 55px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .form-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .form-info p {
+            color: #b1bbdb;
+            margin-bottom: 22px;
+        }
+
+        .form-card {
+            background: #0b0f1a;
+            border-radius: 40px;
+            padding: 42px 38px;
+            border: 1px solid #ff5e3a60;
+            box-shadow: 0 20px 30px -12px black;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 60px;
+            background: #151e2a;
+            border: 1px solid #2c3548;
+            font-size: 1rem;
+            color: white;
+            font-family: inherit;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #ff5e3a;
+            box-shadow: 0 0 0 3px #ff5e3a30;
+        }
+
+        .form-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .form-note {
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 18px;
+            color: #7f8aa8;
+        }
+
+        .footer {
+            background: #010101;
+            text-align: center;
+            padding: 48px 20px;
+            border-top: 1px solid #1f2538;
+            color: #6c7a9e;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .nav-links {
+                display: none;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .form-card {
+                padding: 30px 20px;
+            }
+            .hero-stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">Ster<span>Roid</span> <span style="color:#ff5e3a;">🔥</span> Маркетинг</div>
+        <div class="nav-links">
+            <a href="#steroids">Стероиды</a>
+            <a href="#program">Программа курса</a>
+            <a href="#form">Ворваться</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-syringe"></i> Инъекция продаж | 2 дня мощи</div>
+                <h1>Стероиды <br> для контента и трафика</h1>
+                <p>Нейросети, автоворонки, AI-копирайтинг и чит-коды — разгоняем ваш маркетинг в 3-5 раз быстрее без увеличения бюджета. Читерский интенсив для роста в 2025.</p>
+                <a href="#form" class="btn"><i class="fas fa-bolt"></i> Принять дозу знаний</a>
+                <div class="hero-stats">
+                    <div class="stat-item"><h3>200%</h3><span>скорость внедрения</span></div>
+                    <div class="stat-item"><h3>12+</h3><span>AI-инструментов</span></div>
+                    <div class="stat-item"><h3>5 кейсов</h3><span>стероид-эффект</span></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-dumbbell"></i>
+                <p style="margin-top: 20px; font-weight: 700; font-size: 1.3rem;">💪 Маркетинг без ограничений</p>
+                <small style="color:#b1bbdb;">Автоматизация, ChatGPT, клик-фермы идей</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 стероидных кита -->
+    <section id="steroids" class="section">
+        <div class="container">
+            <h2 class="section-title"><span>💉 Стероидный стек</span> маркетолога 2.0</h2>
+            <div class="cards-grid">
+                <div class="card"><i class="fas fa-brain"></i><h3>AI-копирайтинг</h3><p>Генерация постов, писем, офферов за 30 секунд. Нейросети, которые пишут лучше копирайтеров.</p></div>
+                <div class="card"><i class="fas fa-robot"></i><h3>Автоворонки</h3><p>Чат-боты, рассылки, автовебинары — продажи 24/7 без участия человека.</p></div>
+                <div class="card"><i class="fas fa-chart-simple"></i><h3>Парсинг + таргет</h3><p>Сбор баз конкурентов и «горячий» таргет с конверсией x2. Стероид для клиентов.</p></div>
+                <div class="card"><i class="fas fa-video"></i><h3>Reels & Shorts</h3><p>Автоматическое создание 20+ видео в день. Алгоритмы любят объём.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программа курса: стероидный цикл -->
+    <section id="program" class="program section">
+        <div class="container">
+            <h2 class="section-title"><span>⚡ Программа:</span> 2 дня чистого 'химического' маркетинга</h2>
+            <div class="program-list">
+                <div class="program-item"><div class="day-badge">День 1 🔥</div><div class="program-text"><strong>Ударная доза:</strong> Нейросети для контента (ChatGPT, Midjourney, Кандинский). Пишем посты, сценарии и УТП за 5 минут. Автоматизация SMM.</div></div>
+                <div class="program-item"><div class="day-badge">День 1 💊</div><div class="program-text"><strong>Массовый охват:</strong> Парсинг ЦА, скрейпинг, брут-стратегии для лидогенерации (легально). Как получать 100+ заявок без рекламного бюджета.</div></div>
+                <div class="program-item"><div class="day-badge">День 2 🧬</div><div class="program-text"><strong>Стероиды для таргета:</strong> Автостратегии, клоакинг креативов, алгоритмы ML для снижения цены клика до 5₽.</div></div>
+                <div class="program-item"><div class="day-badge">День 2 🚀</div><div class="program-text"><strong>Финальный чит-код:</strong> Собираем супер-воронку из AI, автоворонок и чат-ботов. Как масштабировать в 10 раз быстрее конкурентов.</div></div>
+                <div class="program-item"><div class="day-badge">🎁 Бонус</div><div class="program-text"><strong>Модуль «Секретные скрипты»</strong> — шаблоны промптов, база ассистентов, карта ускорения.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- форма захвата -->
+    <section id="form" class="form-section section">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-info">
+                    <h2>Хочешь стероидный <br> рывок в карьере? 💉</h2>
+                    <p>Запишись на пару сейчас — получи PDF-сборник «20 AI-инструментов, которые заменят целый отдел маркетинга» бесплатно.</p>
+                    <div style="display: flex; gap: 12px; margin-top: 20px;">
+                        <i class="fas fa-check-circle" style="color:#ff5e3a;"></i> <span>Доступ к записи навсегда</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; margin-top: 12px;">
+                        <i class="fas fa-check-circle" style="color:#ff5e3a;"></i> <span>Чат с кураторами и поддержка 24/7</span>
+                    </div>
+                </div>
+                <div class="form-card">
+                    <h3 style="margin-bottom: 24px; font-size: 1.8rem;">💉 Начать качаться</h3>
+                    <form id="signupForm" action="#" method="post">
+                        <div class="input-group">
+                            <input type="text" id="name" placeholder="Твое имя" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" placeholder="E-mail (куда прислать доступ)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" id="phone" placeholder="Телефон / Telegram">
+                        </div>
+                        <button type="submit" class="btn" id="submitBtn"><i class="fas fa-syringe"></i> Получить стероид-доступ</button>
+                        <div class="form-note">После нажатия вы получите всю информацию на почту. Никакого спама, только мощь!</div>
+                    </form>
+                    <div id="successMessage" style="display:none; margin-top: 20px; background: #1b3b2f; padding: 12px; border-radius: 40px; text-align: center; color: #b0ffc0;">✅ Регистрация подтверждена! Жди письмо с секретными материалами.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p><i class="fas fa-skull"></i> Стероиды для продаж — метафора ускорения. Все инструменты легальны и этичны. 18+</p>
+            <p style="margin-top: 16px;">© 2025 Steroid Marketing Intensive | Твоя тайная формула роста</p>
+        </div>
+    </footer>
+</main>
+
+<script>
+    // простая обработка формы с имитацией отправки
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if(name === '' || email === '') {
+            alert('Пожалуйста, введи имя и email! 💉');
+            return;
+        }
+        // имитация успешной отправки
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('submitBtn').disabled = true;
+        document.getElementById('submitBtn').innerHTML = '<i class="fas fa-check"></i> Готово! Жди инъекцию';
+        // сброс через 4 секунды для красоты (но disabled оставим)
+        setTimeout(() => {
+            document.getElementById('signupForm').reset();
+        }, 500);
+        // здесь можно отправить данные на бэкенд, но для лендинга достаточно
+        console.log(`Запись на стероид-курс: ${name}, ${email}`);
+    });
+</script>
+</body>
+</html>
