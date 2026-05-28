@@ -350,7 +350,7 @@
 <footer>
     <div class="container">
         <p><i class="fas fa-shield-alt"></i> AnaboLab — образовательная платформа. Вся информация предназначена для лиц старше 21 года.</p>
-        <p style="margin-top: 12px;">© 2025 | ОГРН 1234567890 | Политика конфиденциальности | <a href="#" style="color:#FF8C42;">Договор оферты</a></p>
+        <p style="margin-top: 12px;">© 2025 | Политика конфиденциальности | <a href="#" style="color:#FF8C42;">Договор оферты</a></p>
         <p style="margin-top: 8px;">г. Москва, ул. Спортивная, д. 10 | +7 (495) 123-45-67</p>
     </div>
 </footer>
